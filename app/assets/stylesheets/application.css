@@ -16,25 +16,40 @@
 
 *{
     margin: 0;
-    padding: none;
+    padding: 0;
+}
+
+#input_box{
+    /* display: inline; */
+    position: fixed;
+    bottom: 0;
+    padding: 30px;
+    background-color: slategray;
+}
+#add{
+    width: 5em;
+    height: 3em;
+    border-radius: 5px;
+    outline: none;
+
 }
 
 .contents{
-    position: fixed;
-    bottom: 0;
-    width: 800px;
-    margin: 50px;
+    width: calc(100vw - 6em);
+    height: 80px;
+    border-radius: 5px;
 }
-.inout_box{
-    position: fixed;
-    bottom: 0;
-    right: 0;
+li{
+    list-style-type: none;
+    padding-right:2px ;
+}
+.list{
+    display: inline;
 }
 
-#add{
-    position: fixed;
-    bottom: 0;
-    right: 400px ;
+.list_container{
     margin: 50px;
-
+    height: 400px;
+    background-color: rgb(227, 227, 227);
+    overflow: scroll;
 }

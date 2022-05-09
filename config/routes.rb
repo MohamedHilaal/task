@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'todo#index'
   post '/todo/create' => 'todo#create'
+  post '/todo/update' => 'todo#update'
+
 end

@@ -1,0 +1,43 @@
+               
+
+jQuery(document).ready(function () {
+    jQuery(document).on("click", '#add', function(){
+        var content = $('.contents').val()
+        $.ajax({
+            type: "post", 
+            url: "/todo/create",
+            data: {todo:{content: content}},
+            success: function(data, textStatus, jqXHR){   
+                    $('.list_container').html(
+                        data
+                    )             
+                    $('.contents').val('')
+                }  
+            ,
+            error: function(jqXHR, textStatus, errorThrown){}
+          })
+    return false;
+    })
+
+
+    jQuery(document).on("change", '.checkbox', function(){
+        todo_id = $(this).attr('id')
+        $.ajax({
+            type: "post", 
+            url: "/todo/update",
+            data: {todo:{id: todo_id}},
+            success: function(data, textStatus, jqXHR){   
+                $('.list_container').html(
+                    data
+                )       
+      
+                }  
+            ,
+            error: function(jqXHR, textStatus, errorThrown){
+
+            }
+          })
+    }) 
+
+
+})
