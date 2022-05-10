@@ -42,6 +42,7 @@
 li{
     list-style-type: none;
     padding-right:2px ;
+    margin-left: 30px;
 }
 .list{
     display: inline;
@@ -49,7 +50,51 @@ li{
 
 .list_container{
     margin: 50px;
+    padding: 30px;
     height: 400px;
     background-color: rgb(227, 227, 227);
     overflow: scroll;
+}
+.checkbox{
+    border-radius: 50%;
+}
+
+
+
+
+ 
+
+
+
+
+
+.checkbox{
+    visibility: hidden;
+}
+
+.checkbox_c input::before{
+    position: absolute;
+    
+    cursor: pointer;
+    content: '';
+    background-color: white;
+    border: 0.5px solid black;
+    border-radius:50% ;
+    width: 15px;
+    height: 15px;
+    visibility: visible;
+}
+.checkbox_c input:checked::before{
+    position: absolute;
+ 
+    cursor: pointer;
+
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+ 
+    outline: 5px solid rgb(41, 11, 133);
+    outline-offset: -3px;
+
+    
 }
