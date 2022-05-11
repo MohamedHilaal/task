@@ -1,28 +1,22 @@
+
 <% todo.each do |t|%>
-    <ul><li class='list'>
+
+  <li class='list'>
     <%if t.is_done %>
         <div class="checkbox_c"  id="check">
-            <input type="checkbox" class="checkbox" id= <%= t.id %> checked ></input>
-            <strike>
-        <%= t.content%>
-        </strike>
-        </div>
-
-       
+            <input type="checkbox" class="checkbox" id= <%= t.id %> checked >
+            <strike class='label'>
+                <%= t.content %>
+            </strike>
+            </input>
+        </div> 
     <% else %>
-    <div class="checkbox_c"  id="check">
-        <input type="checkbox" class="checkbox" id= <%= t.id %></input>
-        <h5 >
-        <%= t.content%>
-        </h5>
-
-    </div>
-        
-       
-        
+        <div class="checkbox_c"  id="check">
+            <input type="checkbox" class="checkbox" id= <%= t.id %></input>
+           <label class='label'> 
+                <%= t.content %>
+          </label>
+        </div>        
     <% end %>
-
     </li>
-
-    </ul>
-    <% end %>
+<% end %>

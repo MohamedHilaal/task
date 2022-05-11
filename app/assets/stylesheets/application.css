@@ -17,56 +17,77 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
 }
 
 #input_box{
     /* display: inline; */
     position: fixed;
     bottom: 0;
-    padding: 30px;
-    background-color: slategray;
+    width: 100vw;
+    height: 180px;
+    background-color: rgb(208, 208, 208);
+    padding: 60px 20vw 60px 20vw
+ 
 }
 #add{
-    width: 5em;
-    height: 3em;
+    width: 5rem;
+    height: 2rem;
     border-radius: 5px;
     outline: none;
+    background-color: rgb(43, 167, 58);
 
+    border: none;
+    float: right;
 }
 
 .contents{
-    width: calc(100vw - 6em);
-    height: 80px;
+    /* margin: 80px; */
+    height: 60px;
     border-radius: 5px;
-}
-li{
-    list-style-type: none;
-    padding-right:2px ;
-    margin-left: 30px;
-}
-.list{
-    display: inline;
+    width: 60vw;
 }
 
-.list_container{
-    margin: 50px;
-    padding: 30px;
-    height: 400px;
-    background-color: rgb(227, 227, 227);
-    overflow: scroll;
+li{
+    list-style-type: none;
 }
+.label{
+    margin-left: 5px;
+}
+
+h1{
+    position: fixed;
+    top: 15px;
+
+    width: 70%;
+    margin: 0 15%;
+    padding-left: 17px;    
+    /* margin-bottom: 20px; */
+}
+
+.list{
+    padding-bottom: 30px;
+    position: relative;
+    /* top: 30px; */
+}
+
+.list_container {
+  height: calc(100vh - 100px);
+    overflow: scroll;
+    width: 70%;
+    padding-left: 50px;
+    margin: 0 15%;
+    margin-top: 100px;
+}
+
 .checkbox{
     border-radius: 50%;
 }
 
-
-
-
- 
-
-
-
-
+.checkbox_c{
+    display: block;
+}
 
 .checkbox{
     visibility: hidden;
@@ -78,23 +99,27 @@ li{
     cursor: pointer;
     content: '';
     background-color: white;
-    border: 0.5px solid black;
+    border: 1px solid black;
     border-radius:50% ;
-    width: 15px;
-    height: 15px;
+    width: 17px;
+    height: 17px;
     visibility: visible;
 }
 .checkbox_c input:checked::before{
     position: absolute;
- 
+    content: "✔";
     cursor: pointer;
+    text-align: center;
+    background-color: rgb(43, 167, 58);
+    width: 16px;
+    /* padding-left: 1px; */
+    height: 16px;
+    color: aliceblue;
+    /* padding-left: 2px; */
+    background-position: right;
+    align-items: center;
+    /* margin-right: px; */
 
-    background-color: #fff;
-    width: 15px;
-    height: 15px;
- 
-    outline: 5px solid rgb(41, 11, 133);
-    outline-offset: -3px;
 
     
 }

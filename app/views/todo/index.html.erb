@@ -1,19 +1,16 @@
 
 
 <%= javascript_include_tag 'todo', 'data-turbolinks-track': 'reload' %>
+<h1>Yourtodods</h1>
 
-<div class="list_container">
+
+<div class='list_container'>
 <%= render partial: 'todo_list',locals: {todo:@todo_all} %>
 </div>
+
 <div id='input_box'>
     <%= form_with(model:@todo, url:todo_create_path )  do |f| %>
         <%= f.text_area :content, class:'contents' %>
        <button id = 'add' >ADD</button>
     <% end %>
-</div>
-
-<div class="container">
-  <div class="checkbox"  id="check">
-    <input type="checkbox" id ='checkk'/>
-  </div>
 </div>
