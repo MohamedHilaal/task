@@ -58,7 +58,7 @@ li{
 
 h1{
     position: fixed;
-    top: 15px;
+    top: 55px;
 
     width: 70%;
     margin: 0 15%;
@@ -122,4 +122,54 @@ h1{
 
 
     
+}
+
+nav{
+    width: 100vw;
+    position: fixed;
+    top: 0;
+
+    background-color: rgb(43, 167, 58);
+
+    height: 50px;
+    /* text-align: right; */
+    padding: 5px 15px 0 0 ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+nav strong{
+    float: right;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+nav p{
+    float: right;
+    clear: right;
+}
+
+.navbar-link{
+    text-decoration: none;
+    color: rgb(119, 121, 122);
+    font-size: 20px;
+
+}
+.login_container{
+    position: absolute;
+    /* height: 180px;   */
+    /* background-color: aqua; */
+    top: 30%;
+    left: 40%;
+    width: 300px;
+    /* font-size: 20px; */
+    border: 0.5px solid black;
+    padding: 50px;
+    text-align: center;
+    /* text-decoration: none; */
+    
+}
+.login_container input{
+    border-radius: 5px;
+}
+.sign_container{
+    position: absolute;
+    top: 100px;
 }
