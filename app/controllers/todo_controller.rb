@@ -8,9 +8,12 @@ class TodoController < ApplicationController
         @todo = Todo.new(params.require(:todo).permit(:content))
         @todo.save
         @todo_all = Todo.all
-        format
+        respond_to do |format|
+            format.html { render partial: 'todo_list', locals: {todo: @todo_all} }
+         end
     end
     def update
+
         v = params[:todo]
         v = v[:id]
         @todo = Todo.find(v.to_i)
@@ -28,10 +31,5 @@ class TodoController < ApplicationController
     end
 
 
-def format
-    respond_to do |format|
-        format.html { render partial: 'todo_list', locals: {todo: @todo_all} }
-     end
-end
 
 end
