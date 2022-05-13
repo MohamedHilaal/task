@@ -20,7 +20,7 @@
     <% end %>
     <nav class="navbar-text float-right" id='nav_notification'>
       <% if user_signed_in? %>
-        <strong><%= current_user.email %></strong>
+        <strong><%= current_user.username %></strong>
         <p> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
         <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></p>
       <% else %>
