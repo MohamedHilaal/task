@@ -1,21 +1,20 @@
 class TodoController < ApplicationController
     def index
-        @todo_all = Todo.where(users_id: current_user.id)
+        @todo_all = Todo.where(user_id: current_user.id)
         @todo = Todo.new
-        
     end
-    def create
-        
+
+    def create  
         @todo = Todo.new(params.require(:todo).permit(:content))
-        @todo.users_id = current_user.id
+        @todo.user_id = current_user.id
         @todo.save
-        @todo_all = Todo.where(users_id: current_user.id)
+        @todo_all = Todo.where(user_id: current_user.id)
         respond_to do |format|
             format.html { render partial: 'todo_list', locals: {todo: @todo_all} }
          end
     end
-    def update
 
+    def update
         v = params[:todo]
         v = v[:id]
         @todo = Todo.find(v.to_i)
@@ -25,13 +24,23 @@ class TodoController < ApplicationController
             @todo.is_done = true    
         end
         @todo.save
-        @todo_all = Todo.where(users_id: current_user.id)
+        @todo_all = Todo.where(user_id: current_user.id)
         respond_to do |format|
             format.html { render partial: 'todo_list', locals: {todo: @todo_all} }
          end
-
     end
 
-
+    def export
+        @todo = Todo.where(user_id: current_user.id)
+        respond_to do |format|
+            format.html
+            format.csv { send_data @todo.to_csv, filename: "todo-#{Date.today}.csv" }
+        end
+    end
+    
+    def upload
+        @file = Todo.import(params[:file],current_user.id)
+        redirect_to todo_index_path
+    end
 
 end

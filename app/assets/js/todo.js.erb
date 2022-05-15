@@ -38,6 +38,15 @@ jQuery(document).ready(function () {
             }
           })
     }) 
-
-
+    jQuery(document).on("click", '.import_btn', function(){
+        $('#file_input').fadeToggle();
+        var text = $('.import_btn').text()
+        if(text == 'Import'){
+            $('.import_btn').delay('slow').text('Close')
+        }
+        else{
+            $('.import_btn').delay('slow').text('Import')   
+        }
+        }) 
+   
 })
