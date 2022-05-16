@@ -5,6 +5,7 @@ class TodoController < ApplicationController
     end
 
     def create  
+        UserMailer.with(user: @user).welcome_email.deliver_later
         @todo = Todo.new(params.require(:todo).permit(:content))
         @todo.user_id = current_user.id
         @todo.save
@@ -39,6 +40,8 @@ class TodoController < ApplicationController
     end
     
     def upload
+        @user = current_user
+        UserMailer.with(user: @user).success_email.deliver_now
         @file = Todo.import(params[:file],current_user.id)
         redirect_to todo_index_path
     end

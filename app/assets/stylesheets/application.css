@@ -143,7 +143,7 @@ nav{
 }
 nav strong{
     float: right;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 nav p{
     float: right;
@@ -152,15 +152,14 @@ nav p{
 
 .navbar-link{
     text-decoration: none;
-    color: rgb(119, 121, 122);
-    font-size: 20px;
-
+    color: aliceblue;
+    font-size: 15px;
 }
 .login_container, .sign_container{
     position: absolute;
     /* height: 180px;   */
     /* background-color: aqua; */
-    top: 10.22rem;
+    top: 15.22rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
 
     left: 30rem;
@@ -248,7 +247,8 @@ nav p{
     /* background-color: aquamarine; */
     position: absolute;
     top: 70px;
-    right: 20px;
+    left: 20px;
+    width: 140px;
     /* color: red; */
 }
 
@@ -315,4 +315,18 @@ input[type='file']{
 }
 .alert-success{
     color: rgb(20, 193, 20);
+}
+
+#error_explanation {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    color: red;
+    font-size: 10px;
+    width: 100%;
+}   
+
+#error_explanation li{
+    position: absolute;
+    left: 160px;
 }
