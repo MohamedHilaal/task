@@ -10,6 +10,8 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.4"
 gem "sprockets-rails"
 gem 'jquery-rails'
 
+
+
 gem 'pry-byebug'
 
 gem 'devise'
