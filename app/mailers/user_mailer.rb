@@ -3,7 +3,8 @@ class UserMailer < ApplicationMailer
 
     def success_email
         @user = params[:user]
+        @userId = User.where(id: @user).take
         @url  = 'http://example.com/login'
-        mail(to: @user.email, subject: 'Todo List')
+        mail(to: @userId.email, subject: 'Todo List')
     end
 end

@@ -24,14 +24,30 @@
 
 #input_box{
     /* display: inline; */
+    /* display: none; */
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 180px;
+    height: 140px;
     background-color: rgb(208, 208, 208);
-    padding: 60px 20vw 60px 20vw
- 
+    padding: 30px 20vw 30px 20vw
+
 }
+
+.import_btn,.file_sub{
+  width: 5rem;
+  height: 2rem;
+  float: right;
+  background-color: #222;
+  cursor: pointer;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  color: aliceblue;
+}
+
+
+
 #add{
     width: 5rem;
     height: 2rem;
@@ -42,6 +58,10 @@
     border: none;
     float: right;
 }
+
+
+
+
 
 .contents{
     /* margin: 80px; */
@@ -57,14 +77,30 @@ li{
     margin-left: 5px;
 }
 
+.heading{
+  position: fixed;
+  top: 55px;
+  width: 60%;
+  margin: 0 15%;
+  padding-left: 70px;
+}
+
+
 h1{
-    position: fixed;
-    top: 55px;
-    width: 70%;
-    margin: 0 15%;
-    padding-left: 70px;    
+float: left;
+
+
     /* margin-bottom: 20px; */
 }
+
+.btn{
+
+  text-decoration: none;
+  float: right;
+  margin-top: 7px;
+
+}
+
 
 .list{
     padding-bottom: 30px;
@@ -73,16 +109,21 @@ h1{
 }
 
 .list_container {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 230px);
     width: 50%;
 
     margin: 0 15%;
     margin-left: 350px;
     margin-top: 100px;
+    overflow: auto  ;
     overflow: scroll;
     scroll-behavior: smooth;
     scrollbar-width: 30px;
 
+}
+
+.file_sub{
+  display: none;
 }
 
 .checkbox{
@@ -99,7 +140,7 @@ h1{
 
 .checkbox_c input::before{
     position: absolute;
-    
+
     cursor: pointer;
     content: '';
     background-color: white;
@@ -125,7 +166,7 @@ h1{
     /* margin-right: px; */
 
 
-    
+
 }
 
 nav{
@@ -160,7 +201,7 @@ nav p{
     /* height: 180px;   */
     /* background-color: aqua; */
     top: 15.22rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
     left: 30rem;
     width: 30rem;
@@ -228,21 +269,16 @@ nav p{
     border: none;
     outline: none;
     border-bottom:1px solid black ;
-    
+
 }
 .input_field{
     width: 15.5rem;
     display: inline-block;
-    
+
 }
 
-.btn{
-    position: absolute;
-    bottom: 400px;
-    right: 100px;
-    text-decoration: none;
-    /* background-color: aqua; */
-}
+
+
 .alert{
     /* background-color: aquamarine; */
     position: absolute;
@@ -252,25 +288,9 @@ nav p{
     /* color: red; */
 }
 
-#file_sub, .import_btn{
-    background-color: #222;
-    cursor: pointer;
-    width: 90px;
-    border: none;
-    border-radius: 5px;
-    color: aliceblue;
-    height: 40px;
-}
-.import_btn{
-    position: absolute;
-    bottom: 320px;
-    right: 95px;
-}
 
-#file_sub{
-    height: 30px;
-    width: 60px;
-}
+
+
 
 
 .import_btn:hover{
@@ -280,26 +300,13 @@ nav p{
 
 
 
-#file_input{
-    display: none;
-    /* background-color: rgb(164, 77, 77); */
-    float: right;
-    height: 100px;
-    width: 200px;
-    position: absolute;
-    bottom: 200px;
-    right: 40px;
-    text-align: center;
- 
-}
-#file_sub{
-    margin:10px;
-   /* background-color: black; */
-    
-}
+.import{
+  /* background-color: blue; */
+  position: fixed;
+  top: -100%;
+  width: 91px;
+  opacity: 0;
 
-#file_sub{
-    margin-bottom: 10px ;
 }
 
 input[type='file']{
@@ -324,7 +331,7 @@ input[type='file']{
     color: red;
     font-size: 10px;
     width: 100%;
-}   
+}
 
 #error_explanation li{
     position: absolute;
