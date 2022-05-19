@@ -1,18 +1,18 @@
-               
+
 
 jQuery(document).ready(function () {
     jQuery(document).on("click", '#add', function(){
         var content = $('.contents').val()
         $.ajax({
-            type: "post", 
+            type: "post",
             url: "/todo/create",
             data: {todo:{content: content}},
-            success: function(data, textStatus, jqXHR){   
+            success: function(data, textStatus, jqXHR){
                     $('.list_container').html(
                         data
-                    )             
+                    )
                     $('.contents').val('')
-                }  
+                }
             ,
             error: function(jqXHR, textStatus, errorThrown){}
           })
@@ -22,31 +22,35 @@ jQuery(document).ready(function () {
 
     jQuery(document).on("change", '.checkbox', function(){
         todo_id = $(this).attr('id')
+        let isChecked = $(this).is(':checked');
+        console.log(isChecked)
         $.ajax({
-            type: "post", 
+            type: "post",
             url: "/todo/update",
-            data: {todo:{id: todo_id}},
-            success: function(data, textStatus, jqXHR){   
+            data: {todo:{id: todo_id,is_done: isChecked }},
+            success: function(data, textStatus, jqXHR){
                 $('.list_container').html(
                     data
-                )       
+                )
                 console.log('Heyu')
-                }  
+                }
             ,
             error: function(jqXHR, textStatus, errorThrown){
 
             }
           })
-    }) 
+    })
     jQuery(document).on("click", '.import_btn', function(){
-        $('#file_input').fadeToggle();
-        var text = $('.import_btn').text()
-        if(text == 'Import'){
-            $('.import_btn').delay('slow').text('Close')
-        }
-        else{
-            $('.import_btn').delay('slow').text('Import')   
-        }
-        }) 
-   
+        $(".file_sub").toggle()
+        jQuery(".import").trigger('click');
+        $(".import_btn").css("opacity","0");
+        $(".import_btn").css("float","left");
+
+      })
+        jQuery(document).on("click", '.file_sub', function(){
+          $(".import_btn").css("opacity","1");
+          $(".import_btn").css("float","right");
+           $(".file_sub").toggle()
+          })
+
 })

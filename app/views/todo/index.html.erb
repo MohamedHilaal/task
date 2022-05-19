@@ -1,24 +1,31 @@
 
 
 <%= javascript_include_tag 'todo', 'data-turbolinks-track': 'reload' %>
-<h1>Your todos</h1>
+<div class='heading'>
+  <h1>Your todos</h1>
 
-<a href="/todo/export.csv" class='btn'>Export CSV</a>
+  <a href="/todo/export.csv" class='btn'>Export CSV</a>
+
+</div>
+
 <div class='list_container'>
 <%= render partial: 'todo_list',locals: {todo:@todo_all} %>
 </div>
-<button class='import_btn' >Import</button>
 
-<div id='file_input'>
-<%= form_tag(todo_upload_path, :multipart=> true) do %>
-    <%= file_field_tag :file, class: 'import' %>    
-    <%= submit_tag  'Upload' , id:'file_sub' %>
-<% end %>
-</div>
 
 <div id='input_box'>
     <%= form_with(model:@todo, url:todo_create_path )  do |f| %>
         <%= f.text_area :content, class:'contents' %>
+
        <button id = 'add' >ADD</button>
+
+
     <% end %>
+    <button class='import_btn' >Import</button>
+
+<%= form_tag(todo_upload_path, :multipart=> true) do %>
+    <%= file_field_tag :file, class: 'import' %>
+    <%= submit_tag  'Upload File' , class:'file_sub' %>
+<% end %>
+
 </div>
