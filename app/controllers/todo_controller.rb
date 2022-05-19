@@ -16,10 +16,10 @@ class TodoController < ApplicationController
     end
 
     def update
-        v = params[:todo]
-        v = v[:id]
-        @todo = Todo.find(v.to_i)
-        @todo.is_done =  v[:is_done]
+        todo = params[:todo]
+        todo_id = todo[:id]
+        @todo = Todo.find(todo_id.to_i)
+        @todo.is_done =  todo[:is_done]
         @todo.save
         @todo_all = Todo.where(user_id: current_user.id)
         respond_to do |format|
